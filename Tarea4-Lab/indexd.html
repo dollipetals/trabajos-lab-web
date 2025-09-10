@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 4</title>
+    <style>
+        .contenedor {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            /* columnas de la pagina */
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            /* gap es para separar las columnas, darles un borde entre ellas */
+            gap: 15px;
+
+        }
+
+
+        .contenido {
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            object-fit: contain;
+        }
+
+        img {
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: 0.3s;
+
+        }
+
+        img:hover {
+           filter: grayscale(0%);
+           scale: 1.01;
+
+        }
+
+        /* el id se llama con # 
+        Los bordes se cuentan enteros hacia abajo */
+
+        #ultimo {
+            /* Cuadrado */
+            grid-column: 2/4;
+            grid-row: 2/4;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+
+    <div class="contenedor">
+        <div class="contenido">
+            <img src="https://i.pinimg.com/736x/4a/69/37/4a69373197269211468db98a0d44a2af.jpg">
+        </div>
+        <div class="contenido">
+            <img src="https://i.pinimg.com/736x/2f/7f/0a/2f7f0aa84758cea5ee41380870283bf9.jpg">
+        </div>
+        <div class="contenido">
+            <img src="https://i.pinimg.com/1200x/7a/89/c7/7a89c7dc8546babd2bfa2289f0fb6277.jpg">
+        </div>
+        <div class="contenido">
+            <img src="https://i.pinimg.com/736x/df/36/32/df363216fed1d0791a7b814572dded57.jpg">
+        </div>
+        <div class="contenido">
+            <img src="https://i.pinimg.com/736x/e0/20/fa/e020fa81b5360b9726fddaaddd554729.jpg">
+        </div>
+        <div class="contenido" id="ultimo">
+            <img src="https://i.pinimg.com/736x/b6/ad/17/b6ad17a295d6039efe77ae83b9b5843f.jpg">
+        </div>
+    
+
+        </div>
+
+
+</body>
+
+</html>
