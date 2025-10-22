@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 7</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            cursor: default;
+        }
+
+        .estela {
+            position: absolute;
+            width: 17px;
+            height: 17px;
+            background-image: url('https://img.icons8.com/?size=60&id=71212&format=png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        let position = [];
+
+        document.addEventListener("mousemove", function (e) {
+            position.push({ x: e.pageX, y: e.pageY });
+
+            if (position.length > 10) {
+                position.shift();
+            }
+
+            let atrás = document.getElementsByClassName("estela");
+            while (atrás.length > 0) {
+                atrás[0].remove();
+            }
+
+            for (let i = 0; i < position.length; i++) {
+                let copia = document.createElement("div");
+                copia.className = "estela";
+                copia.style.left = (position[i].x - 10) + "px";
+                copia.style.top = (position[i].y - 10) + "px";
+                copia.style.opacity = i / position.length;
+                document.body.appendChild(copia);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

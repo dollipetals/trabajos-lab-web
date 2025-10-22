@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tarea 6</title>
+  <style>
+    #cuadro {
+      width: 200px;
+      height: 200px;
+      background-color: gray;
+      margin: 50px auto;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div id="cuadro"></div>
+
+  <script>
+    const cuadro = document.getElementById('cuadro');
+    let mouseUp = false;
+
+    cuadro.addEventListener('mouseenter', () => {
+      mouseUp = true;
+    });
+
+    cuadro.addEventListener('mouseleave', () => {
+      mouseUp = false;
+    });
+    cuadro.addEventListener('click', () => {
+      if (mouseUp) {
+        const r = Math.trunc(Math.random() * 255);
+        const g = Math.trunc(Math.random() * 255);
+        const b = Math.trunc(Math.random() * 255);
+        cuadro.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+      }
+    });
+  </script>
+</body>
+</html>
